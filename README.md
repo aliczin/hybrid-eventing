@@ -57,7 +57,7 @@ docker-compose up -f dockers/applications.yml
 Обсудить можно:
 
 * в комментариях На Хабре - TODO
-* в дискуссиях на Github - https://github.com/aliczin/howto-be-digital/discussions 
-* в канале Телеграм - https://t.me/ineedlustin 
+* в дискуссиях на Github - https://github.com/aliczin/howto-be-digital/discussions/20 
+* в канале Телеграм в посте с которого данная работа начиналась - https://t.me/ineedlustin/265  
 
 [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
