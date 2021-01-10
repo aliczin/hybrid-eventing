@@ -1,0 +1,3 @@
+[submodule "dockers/rabbitmq-kafka-sink"]
+	path = dockers/rabbitmq-kafka-sink
+	url = https://github.com/aliczin/kafka-connect-rabbitmq
