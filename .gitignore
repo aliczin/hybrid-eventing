@@ -1,0 +1,5 @@
+.cache
+dockers/.cache
+
+/applications/**/[Bb]in/
+/applications/**/[Oo]bj/

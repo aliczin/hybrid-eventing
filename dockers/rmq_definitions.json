@@ -1,0 +1,77 @@
+{
+    "users":[
+        {
+           "name":"rabbitmq",
+           "password_hash":"kQRvvleuJDFCpItE9iKIQa8oiNpJD8xi9gfV4OIcMYoyEDWj",
+           "hashing_algorithm":"rabbit_password_hashing_sha256",
+           "tags":"administrator"
+        }
+    ],
+    "permissions":[
+        {
+           "user":"rabbitmq",
+           "vhost":"/",
+           "configure":".*",
+           "write":".*",
+           "read":".*"
+        }
+    ],
+    "vhosts":[
+        {"name":"/"}
+    ],
+    "queues":[
+        {
+           "name":"orders-for-ofssets",
+           "vhost":"/",
+           "durable":true,
+           "auto_delete":false,
+           "arguments":{
+              
+           }
+        },
+        {
+           "name":"orders-amqp-10-consumer",
+           "vhost":"/",
+           "durable":true,
+           "auto_delete":false,
+           "arguments":{
+              
+           }
+        }
+     ],
+     "exchanges":[
+        {
+           "name":"orders-send",
+           "vhost":"/",
+           "type":"fanout",
+           "durable":true,
+           "auto_delete":false,
+           "internal":false,
+           "arguments":{
+              
+           }
+        }
+     ],
+     "bindings":[
+        {
+           "source":"orders-send",
+           "vhost":"/",
+           "destination":"orders-amqp-10-consumer",
+           "destination_type":"queue",
+           "routing_key":"",
+           "arguments":{
+              
+           }
+        },
+        {
+           "source":"orders-send",
+           "vhost":"/",
+           "destination":"orders-for-ofssets",
+           "destination_type":"queue",
+           "routing_key":"",
+           "arguments":{
+              
+           }
+        }
+     ]
+}

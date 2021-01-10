@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>netcore_amqp_10_consumer</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AMQPNetLite.Core" Version="2.4.1" />
+  </ItemGroup>
+
+</Project>

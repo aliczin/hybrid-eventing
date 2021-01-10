@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  py-amqp-producer:
+    build: 
+        context: ./applications/python-amqp-09-producer/
+        network: host
+    volumes: 
+      - "./applications/python-amqp-09-producer/src:/app"
+    command: ["/bin/sh","-c", "echo starting-producer && python -u /app/produser.py"]
+    network_mode: "host"
+  netcore-kafka-consumer:
+    build: 
+        context: ./applications/netcore-kafka-consumer/
+        network: host
+    depends_on:
+      - py-amqp-producer 
+    volumes: 
+      - "./applications/netcore-kafka-consumer/src:/app"
+    command: ["/bin/sh","-c", "cd /app && dotnet restore && dotnet run --project ./netcore-kafka-consumer.csproj"]
+    network_mode: "host"
+
+  netcore-amqp-10-consumer:
+    build: 
+        context: ./applications/netcore-amqp-10-consumer/
+        network: host
+    depends_on:
+      - py-amqp-producer 
+    volumes: 
+      - "./applications/netcore-amqp-10-consumer/src:/app"
+    command: ["/bin/sh","-c", "cd /app && dotnet restore && dotnet run --project ./netcore-amqp-10-consumer.csproj"]
+    network_mode: "host"
