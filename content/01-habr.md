@@ -275,11 +275,11 @@ orderEventsApp->Amqp09: send order
 Amqp09->Amqp10: fanout\n copy event
 Amqp09->KafkaQ: fanout\n copy event
 KafkaQ->KafkaConnect: consume\n on message
-Amqp10->orderEventSubApp: subcribe\n for event
 KafkaConnect->KafkaConnect: transform\n message
 KafkaConnect->Kafka: publish to topic
-orderJournalApp->Kafka: read kafka journal
 ```
+
+![](./assets/2021-01-11-00-59-21.png)
 
 а для приемников - все упрощается
 
@@ -287,6 +287,8 @@ orderJournalApp->Kafka: read kafka journal
 Amqp10->orderEventSubApp: subcribe\n for event
 orderJournalApp->Kafka: read kafka journal
 ```
+
+![](./assets/2021-01-11-00-59-50.png)
 
 ## Ключевые посылы
 
